@@ -32,10 +32,10 @@ class MiauController extends Controller
     public function store(StoreMiauRequest $request)
     {
         $datos = $request->input();
-        $miau = new Miau($datos);
-        $miau->save();
-        $miaus = Miau::all();
-        return view("productos.miau",compact("miaus"));
+        $producto = new Miau($datos);
+        $producto->save();
+        $productos = Miau::all();
+        return view("productos.producto",compact("productos"));
     }
 
     /**
