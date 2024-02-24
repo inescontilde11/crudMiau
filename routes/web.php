@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\FuncionaController;
+use \App\Http\Controllers\MiauController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+
+Route::resource("funcionas", FuncionaController::class);
+
+Route::resource("productos", MiauController::class);
+
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
