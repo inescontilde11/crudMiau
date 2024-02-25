@@ -41,9 +41,10 @@ class MiauController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Miau $miau)
+    public function show(int $id)
     {
-        //
+        $producto = Miau::find($id);
+        return view("productos.edit", compact("producto"));
     }
 
     /**
@@ -57,16 +58,22 @@ class MiauController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMiauRequest $request, Miau $miau)
+    public function update(UpdateMiauRequest $request, int $id)
     {
-        //
+        $producto = Miau::find($id);
+        $producto->update($request->input());
+        $productos = Miau::all();
+        return view("productos.producto", compact("productos"));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Miau $miau)
+    public function destroy(int $id)
     {
-        //
+        $producto = Miau::find($id);
+        $producto->delete();
+        $productos = Miau::all();
+        return view("productos.producto", compact("productos"));
     }
 }

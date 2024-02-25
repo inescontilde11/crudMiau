@@ -10,5 +10,5 @@ class Miau extends Model
     use HasFactory;
 
     protected $table = "producto";
-    protected $fillable=['codigo', 'nombre', 'precio'];
+    protected $fillable=['id', 'nombre', 'precio'];
 }

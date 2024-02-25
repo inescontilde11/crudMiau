@@ -22,7 +22,7 @@ class StoreMiauRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "codigo" => "required",
+            "id" => "required",
             "nombre" => ["required","min:5"],//forma 1
             "precio" => "required"
         ];
